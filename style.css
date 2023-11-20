@@ -1,0 +1,246 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --color-primary: #ef4444;
+  --color-second-primary: #f87171;
+  --color-white: #fff;
+  --color-black: #111827;
+  --color-dark: #4b5563;
+  --transition-4s: 0.4s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--color-white);
+  color: var(--color-black);
+}
+
+h1,
+h2 {
+  font-weight: 700;
+  line-height: 130%;
+}
+
+h1 {
+  font-size: 3.75rem;
+  color: var(--color-black);
+}
+
+h3 {
+  font-size: 2.125rem;
+  color: var(--color-primary);
+}
+
+p {
+  color: var(--color-dark);
+  line-height: 150%;
+  font-size: 1.125rem;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+.btn {
+  display: inline-block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.875rem 2rem;
+  font-weight: 500;
+  font-size: 1.125rem;
+  border-radius: 1.875rem;
+  background-color: var(--color-primary);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  transition: var(--transition-4s);
+  color: var(--color-white);
+}
+
+.btn:hover {
+  background-color: var(--color-second-primary);
+  box-shadow: none;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1420px;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+.logo span {
+  color: var(--color-dark);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.nav-links li a {
+  position: relative;
+  font-size: 1.125rem;
+  color: var(--color-dark);
+  transition: var(--transition-4s);
+}
+
+.nav-links li a::before {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  border-radius: 6px;
+  background-color: var(--color-primary);
+}
+
+.nav-links li a:hover {
+  color: var(--color-black);
+}
+
+.nav-links li a:hover::before {
+  width: 100%;
+  transition: var(--transition-4s);
+}
+
+.nav-links li a.active {
+  color: var(--color-black);
+}
+
+.nav-links li a.active::before {
+  width: 100%;
+}
+
+header {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.header-container {
+  display: grid;
+  grid-template-columns: auto 30rem;
+  gap: 4rem;
+  align-items: center;
+}
+
+.header-container h1 {
+  margin: 0.75rem 0;
+}
+
+.header-container p {
+  margin: 0 0 1.8rem;
+  width: 80%;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle {
+  position: relative;
+  height: 30rem;
+  width: 30rem;
+  border-radius: 50%;
+  border: 1px solid var(--color-primary);
+  -webkit-animation: circle linear infinite 20s;
+  animation: circle linear infinite 20s;
+}
+
+@-webkit-keyframes circle {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes circle {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.circle a {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  transition: var(--transition-4s);
+}
+
+.circle a:hover {
+  background-color: var(--color-second-primary);
+  color: var(--color-white);
+}
+
+.circle a:nth-child(1) {
+  left: calc(50% - 2rem);
+  top: -2rem;
+}
+.circle a:nth-child(2) {
+  top: calc(50% - 2rem);
+  right: -2rem;
+}
+.circle a:nth-child(3) {
+  top: calc(50% - 2rem);
+  left: -2rem;
+}
+.circle a:nth-child(4) {
+  left: calc(50% - 2rem);
+  bottom: -2rem;
+}
+
+.hero-image {
+  position: absolute;
+  width: 23rem;
+  height: 23rem;
+  overflow: hidden;
+  padding: 1rem;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+}
